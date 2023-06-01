@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Colleges in AP</title>
+    <!--<script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>-->
+    
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body onload="displayColleges()">
+    <nav>
+        <input type="text" id="searchInput" placeholder="Search...">
+        <button onclick="searchColleges()">Search</button>
+    </nav>
+
+    <ul id="collegeList">
+        <li><College A</li>
+        <li>College B</li>
+        <li>College C</li>
+        <li>College D</li>
+        <li>College E</li>
+    </ul>
+
+    <!--<py-script>
+        def displayColleges():
+            print("<h1>Hello World</h1>")
+    </py-script>-->
+
+
+    <script>
+
+        function searchColleges() {
+            var input, filter, ul, li, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("collegeList");
+            li = ul.getElementsByTagName("li");
+
+            for (i = 0; i < li.length; i++) {
+                txtValue = li[i].textContent || li[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
